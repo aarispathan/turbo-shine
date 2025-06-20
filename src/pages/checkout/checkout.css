@@ -1,0 +1,224 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.checkout-section {
+    font-size: 16px;
+    padding: 30px 10px;
+}
+
+.checkout-section .form-container {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+}
+
+.checkout-section input[type="text"] {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.checkout-section label {
+    margin-bottom: 6px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+}
+
+.checkout-section .action-btn {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.checkout-section .action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+    transition: left 0.6s ease;
+    pointer-events: none;
+}
+
+.checkout-section .action-btn:hover {
+    background: linear-gradient(45deg, #111827, #27272a);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.checkout-section .action-btn:hover::before {
+    left: 100%;
+}
+
+.checkout-section .login-icon {
+    color: #fff;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.checkout-section .action-btn:hover .login-icon {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+.checkout-section .price {
+    float: right;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.checkout-section .form-container h4 {
+    margin-bottom: 20px;
+}
+
+.checkout-section .form-container p {
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #333;
+}
+
+.checkout-section .cart-item-summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.checkout-section .cart-item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.checkout-section .cart-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.checkout-section .cart-item-title {
+    font-size: 14px;
+    color: #111;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .checkout-layout {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .checkout-layout .col-lg-9 {
+        flex: 0 0 70%;
+        max-width: 70%;
+    }
+
+    .checkout-layout .col-lg-3 {
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+
+    .checkout-section .form-container {
+        padding: 20px 30px !important;
+    }
+
+    .checkout-section input[type="text"],
+    .checkout-section label,
+    .checkout-section .cart-item-title,
+    .checkout-section .price,
+    .checkout-section .action-btn {
+        font-size: 14px;
+    }
+
+    .checkout-section .action-btn {
+        padding: 10px 16px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .checkout-section .form-container {
+        padding: 20px 30px !important;
+    }
+
+    .checkout-section input[type="text"],
+    .checkout-section label,
+    .checkout-section .action-btn {
+        font-size: 14px;
+    }
+
+    .checkout-section input[type="text"] {
+        padding: 8px;
+    }
+
+    .checkout-section .action-btn {
+        padding: 10px;
+    }
+
+    .checkout-section .cart-item-summary {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .checkout-section .cart-item-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .checkout-section .cart-item-title,
+    .checkout-section .price {
+        font-size: 13px;
+    }
+
+    .card-detail {
+        padding: 0 10px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .checkout-section .form-container h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .checkout-section .row>.col,
+    .checkout-section .row>[class^='col-'] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .checkout-section .cart-item-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .checkout-section .cart-item-title,
+    .checkout-section .price {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,142 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.payment-section {
+    padding: 30px 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.payment-section h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.payment-section p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.payment-section .icon-container {
+    display: flex;
+    gap: 10px;
+    font-size: 2rem;
+}
+
+.payment-section .payment-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    -ms-border-radius: 24px;
+    -o-border-radius: 24px;
+}
+
+.payment-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.payment-section input.form-control {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.payment-section .action-btn {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.payment-section .action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+    transition: left 0.6s ease;
+    pointer-events: none;
+}
+
+.payment-section .action-btn:hover {
+    background: linear-gradient(45deg, #111827, #27272a);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.payment-section .action-btn:hover::before {
+    left: 100%;
+}
+
+.payment-section .check-icon {
+    color: #fff;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.payment-section .action-btn:hover .check-icon {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+
+@media only screen and (max-width: 768px) {
+    .payment-section {
+        padding: 20px 0px;
+    }
+
+    .payment-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .payment-section .icon-container {
+        font-size: 1.75rem;
+        flex-wrap: wrap;
+    }
+
+    .payment-section input.form-control {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .payment-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .payment-section .icon-container {
+        font-size: 1.5rem;
+    }
+
+    .payment-section label {
+        font-size: 0.9rem;
+    }
+
+    .payment-section input.form-control {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+}

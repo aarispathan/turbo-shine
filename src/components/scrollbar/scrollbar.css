@@ -1,0 +1,40 @@
+/* Container styling — tweak to match your layout */
+.scrollbar {
+    background: #fff;
+    overflow-y: scroll;
+}
+
+/* WebKit custom scrollbar */
+.scrollbar::-webkit-scrollbar {
+    width: 16px;
+    background: #fff;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+.scrollbar::-webkit-scrollbar-track:hover {
+    background: #f4f4f4;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background: #babac0;
+    border: 5px solid #fff;
+    border-radius: 16px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a5;
+    border: 4px solid #f4f4f4;
+}
+
+.scrollbar::-webkit-scrollbar-button {
+    display: none;
+    /* hide top/bottom buttons */
+}
+
+/* Optional inner wrapper (kept from original) */
+.overflow {
+    min-height: 100vh;
+}

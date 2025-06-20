@@ -1,0 +1,14 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .product-container {
+        padding: 0 !important;
+    }
+
+    .product-col {
+        padding: 0px !important;
+    }
+}
