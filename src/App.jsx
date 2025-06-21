@@ -16,17 +16,11 @@ function App() {
   }, []);
 
   return (
-    <>
-      {isLoading ? (
-        <MainLoader />
-      ) : (
-        <AuthProvider>
-          <ToastContainer position="bottom-center" style={{ margin: '10px 0' }} />
-          <CustomCursor />
-          <AppRoutes />
-        </AuthProvider>
-      )}
-    </>
+    <AuthProvider>
+      <ToastContainer position="bottom-center" style={{ margin: '10px 0' }} />
+      <CustomCursor />
+      {isLoading ? <MainLoader /> : <AppRoutes />}
+    </AuthProvider>
   );
 }
 

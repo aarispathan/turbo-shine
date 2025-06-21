@@ -18,22 +18,18 @@ function Header() {
     const toggleMenu = () => setIsOpen(!isOpen);
 
     useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (navRef.current && !navRef.current.contains(event.target)) {
+        if (!isOpen) return;               // add only when open
+
+        function handleClickOutside(e) {
+            if (navRef.current && !navRef.current.contains(e.target)) {
                 setIsOpen(false);
             }
-        };
-
-        if (isOpen) {
-            document.addEventListener('mousedown', handleClickOutside);
-        } else {
-            document.removeEventListener('mousedown', handleClickOutside);
         }
 
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isOpen]);
+      
     return (
         <Container>
             <Row>
@@ -61,7 +57,13 @@ function Header() {
                                     <span>Contact</span>
                                     <div className="link-effect"></div>
                                 </NavLink>
-                                <NavLink to="/cart" className="nav-link cursor-hover" onClick={() => { setIsOpen(false); }}>
+                                <NavLink
+                                    to="/cart"
+                                    className="nav-link cursor-hover"
+                                    onClick={() => {
+                                        setIsOpen(false);
+                                    }}
+                                >
                                     <span>
                                         <RiShoppingCartLine className="shoping-cart" />
                                     </span>
@@ -72,6 +74,7 @@ function Header() {
                                         </span>
                                     )}
                                 </NavLink>
+
                                 {!isLoggedIn ? (
                                     <>
                                         <NavLink to="/signin" className="login-signin-btn cursor-hover">

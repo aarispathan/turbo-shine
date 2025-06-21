@@ -28,17 +28,17 @@ const router = createBrowserRouter([
             { path: 'login', element: <Login /> },
             { path: 'signin', element: <SignIn /> },
             { path: 'product-details/:id', element: <ProductDetails /> },
-            { path: '/forget-password', element: <ForgetPassword /> },
+            { path: 'forget-password', element: <ForgetPassword /> },
+            { path: 'cart', element: <Cart /> },
             {
                 element: <RequireAuth />,
                 children: [
-                    { path: 'cart', element: <Cart /> },
                     { path: 'checkout', element: <Checkout /> },
-                    { path: 'payment-interigation', element: <Payment /> },
+                    { path: 'payment-integration', element: <Payment /> },
                     { path: 'profile', element: <UserProfile /> },
                 ]
-            },
-
+            }
+            ,
             { path: '*', element: <h2>404 - Page not found</h2> }
         ]
     }

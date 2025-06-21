@@ -39,7 +39,7 @@ const Checkout = () => {
             toast.error("Please fill in all required fields!");
             return;
         }
-        navigate('/payment-interigation');
+        navigate('/payment-integration');
     };
     return (
         <div className="checkout-section">

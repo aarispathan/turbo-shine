@@ -8,7 +8,6 @@ import { NavLink } from 'react-router-dom';
 function Cart() {
     const { cartItems, handleDelete, handleIncrease, handleDecrease } = useCart();
 
-    // Safe formatter to avoid 'undefined.toFixed' errors
     const safeToFixed = (num, decimals = 2) => {
         return typeof num === 'number' ? num.toFixed(decimals) : '0.00';
     };
@@ -96,7 +95,7 @@ function Cart() {
 
                                     );
                                 })}
-                                
+
                                 <div className="cart-total-summary row">
                                     <div className="col-md-6 summary-left">
                                         <h2>Cart Total</h2>
