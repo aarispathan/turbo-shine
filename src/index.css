@@ -1,0 +1,49 @@
+body {
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #E9F1FF;
+}
+
+.custom-toast {
+    border: 1px solid transparent;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-toast .custom-progress {
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    height: 5px;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    border-radius: 0 0 8px 8px;
+}
+
+.Toastify__progress-bar-theme--light {
+    background: var(--toastify-color-progress-light) !important;
+}
+
+.custom-toast-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: auto;
+    max-width: 90vw;
+}
+
+@media (max-width: 576px) {
+    .custom-toast-container {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .Toastify__toast {
+        --toastify-toast-width: 70% 70%;
+        margin-bottom: 10px;
+    }
+}

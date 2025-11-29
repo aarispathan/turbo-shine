@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header-section {
+    padding-top: 70px;
+    z-index: 99999;
+}
+
+.header-section .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    padding: 0 2rem;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+.header-section .navbar .nav-brand .logo {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.header-section .navbar .nav-brand a {
+    text-decoration: none;
+}
+
+.header-section .navbar .nav-brand .logo .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes shine {
+    to {
+        left: 200%;
+    }
+}
+
+.header-section .navbar .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.header-section .navbar .nav-links .cart-count {
+    position: relative;
+    bottom: 8px;
+    left: 4px;
+}
+
+.header-section .navbar .nav-link {
+    position: relative;
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.header-section .navbar .nav-link .shoping-cart {
+    font-size: 20px;
+}
+
+.header-section .navbar .nav-link .link-effect {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #60a5fa80, #a78bfa80);
+    border-radius: 0.5rem;
+    opacity: 0;
+    transform: skewX(-20deg);
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.header-section .navbar .nav-link:hover .link-effect,
+.header-section .navbar .nav-link.active .link-effect {
+    left: 0;
+    opacity: 1;
+}
+
+.navbar .login-signin-btn .action-btn {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar .login-signin-btn .action-btn .login-icon {
+    font-size: 13px;
+}
+
+.navbar .login-signin-btn .action-btn:hover .login-icon {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+.navbar .login-signin-btn .action-btn.active .login-icon {
+    color: #ffffff;
+    transform: scale(1.2) rotate(-5deg);
+}
+
+.navbar .login-signin-btn {
+    text-decoration: none;
+}
+
+.navbar .login-signin-btn .btn-text {
+    font-size: 16px;
+}
+
+.navbar .login-signin-btn .action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: all 0.6s ease;
+}
+
+.navbar .login-signin-btn .action-btn:hover {
+    background: linear-gradient(45deg, #27272A, #3F3F46);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    -webkit-transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    -o-transform: translateY(-3px);
+}
+
+.navbar .login-signin-btn .action-btn:hover::before {
+    left: 100%;
+}
+
+#hamburger.is-active {
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.3s;
+    transform: rotate(45deg);
+}
+
+#hamburger.is-active .line:nth-child(2) {
+    width: 0;
+}
+
+#hamburger.is-active .line:nth-child(1),
+#hamburger.is-active .line:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+#hamburger.is-active .line:nth-child(1) {
+    transform: translateY(13px);
+}
+
+#hamburger.is-active .line:nth-child(3) {
+    transform: translateY(-8px) rotate(90deg);
+}
+
+#hamburger .line {
+    width: 30px;
+    height: 2px;
+    background-color: #000000;
+    display: block;
+    margin: 8px auto;
+    transition: all 0.3s ease-in-out;
+}
+
+#hamburger {
+    display: none;
+    cursor: pointer;
+    border: none;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    #hamburger {
+        display: block !important;
+        padding: 0px;
+        background: none;
+    }
+
+    .nav-links {
+        display: none !important;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .nav-links.active {
+        display: flex !important;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    .header-section .navbar .nav-link {
+        color: #ffffff;
+        width: auto;
+    }
+
+    .header-section .navbar .nav-links {
+        gap: 1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .header-section .navbar {
+        padding: 0 1rem 0 0rem;
+    }
+
+    #hamburger {
+        display: block !important;
+        padding: 0px;
+        background: none;
+    }
+
+    #hamburger .line {
+        background-color: #000000;
+        display: block;
+    }
+
+    .nav-links {
+        display: none !important;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        background: rgba(0, 0, 0);
+    }
+
+    .nav-links.active {
+        display: flex !important;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    .header-section .navbar .nav-link {
+        color: #ffffff;
+        width: auto;
+    }
+
+    .header-section .navbar .nav-links {
+        gap: 1rem;
+    }
+}

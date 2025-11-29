@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.swiper {
+    z-index: 0 !important;
+}
+
+.home-swiper-section {
+    position: relative;
+    margin: 50px auto;
+    column-gap: 3rem;
+}
+
+.home-swiper-section .header-main .home-swiper-subtitle {
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #717171;
+}
+
+.home-swiper-section .header-main .home-swiper-title {
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 35px;
+    background-image: linear-gradient(45deg, #60a5fa, #a78bfa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.home-swiper-section .header-main hr {
+    width: 6.25rem;
+    height: 0.25rem;
+    margin: 1.125rem 0 1.875rem;
+    background: #000000;
+    border: none;
+}
+
+.home-swiper-section .home-swiper-description {
+    line-height: 1.6;
+}
+
+.home-swiper-section .home-swiper-btn {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    will-change: transform, box-shadow;
+}
+
+.home-swiper-section .home-swiper-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+    will-change: left;
+}
+
+.home-swiper-section .home-swiper-btn:hover {
+    background: linear-gradient(45deg, #27272A, #3F3F46);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.home-swiper-section .home-swiper-btn:hover::before {
+    left: 100%;
+}
+
+.home-swiper-section .home-swiper-btn .cart-icon {
+    font-size: 15px;
+}
+
+.home-swiper-section .home-swiper-btn:hover .cart-icon {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+.swiper {
+    width: 100%;
+    padding-top: 3.125rem;
+}
+
+.swiper-slide {
+    width: 18.75rem;
+    height: 28.125rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+    background: #ffffff;
+    border-radius: 25px;
+}
+
+.swiper-slide .c-card__title {
+    margin-bottom: 0.625rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 25px;
+}
+
+.swiper-slide .c-card__instrument {
+    color: #000000;
+    padding: 0 1.563rem 4rem;
+    font-size: 15px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-align: center;
+}
+
+.swiper-slide .c-card img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}

@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto 4rem auto;
+    padding: 40px 40px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.login-wrapper:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.login-wrapper .logo-text {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+}
+
+.login-wrapper label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1C252E;
+}
+
+.login-wrapper .input-group {
+    background-color: #f0f4ff;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.input-group-text {
+    background: transparent !important;
+    border-color: transparent !important;
+}
+
+.login-wrapper input[type='text'],
+.login-wrapper input[type='password'] {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background: #f0f4ff;
+    color: #1C252E;
+    transition: background 0.3s;
+}
+
+.login-wrapper input:focus {
+    background: inherit;
+    outline: none;
+    box-shadow: none;
+}
+
+.login-wrapper input::placeholder {
+    color: #7d8da1;
+    font-size: 18px;
+    letter-spacing: 0.4px;
+}
+
+.login-wrapper #usr-passwrd::placeholder {
+    letter-spacing: 2px;
+}
+
+.login-wrapper .btn[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #1f2937, #111827);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-wrapper .btn[type="submit"]:hover {
+    background: linear-gradient(to right, #111827, #000000);
+}
+
+.login-wrapper .alert {
+    font-size: 14px;
+    margin-top: 1.25rem;
+}
+
+.login-wrapper svg {
+    width: 20px;
+    height: 20px;
+    color: #637381;
+}
+
+.login-wrapper .btn-outline-secondary {
+    border: none;
+    background: transparent;
+    padding: 0 12px;
+    cursor: pointer;
+}
+
+.login-wrapper .input-group .btn {
+    position: relative;
+    z-index: 0;
+}
+
+.login-wrapper .action-btn {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.login-wrapper .action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+    transition: left 0.6s ease;
+    pointer-events: none;
+}
+
+.login-wrapper .action-btn:hover {
+    background: linear-gradient(45deg, #111827, #27272a);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.login-wrapper .action-btn:hover::before {
+    left: 100%;
+}
+
+.login-wrapper .action-btn .login-icon {
+    color: #ffffff;
+    height: 17px !important;
+}
+
+.login-wrapper .action-btn:hover .login-icon {
+    transform: rotate(-10deg) scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+.login-wrapper .link-style {
+    color: #3b82f6;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-wrapper .link-style:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+.login-wrapper .social-login-buttons {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.login-wrapper .social-login-buttons button {
+    width: 50%;
+}
+
+.login-wrapper .separator {
+    text-align: center;
+    position: relative;
+    margin: 1.5rem 0;
+}
+
+.login-wrapper .separator::before,
+.login-wrapper .separator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background: #ddd;
+}
+
+.login-wrapper .separator::before {
+    left: 0;
+}
+
+.login-wrapper .separator::after {
+    right: 0;
+}
+
+.login-wrapper .separator span {
+    background: #fff;
+    padding: 0 10px;
+    color: #6b7280;
+    /* Tailwind gray-500 */
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 450px) {
+    .login-wrapper {
+        margin-top: 2rem;
+        padding: 25px 20px;
+    }
+
+    .login-wrapper input {
+        font-size: 14px;
+    }
+
+    .login-wrapper input::placeholder {
+        font-size: 13px;
+    }
+
+    .login-wrapper .logo-text {
+        font-size: 1.6rem;
+    }
+
+    .login-wrapper .btn[type="submit"],
+    .login-wrapper .action-btn {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+
+    .login-wrapper .link-style {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .login-wrapper {
+        margin-top: 3rem;
+        padding: 30px 30px;
+        width: 95%;
+    }
+
+    .login-wrapper input {
+        font-size: 15px;
+    }
+
+    .login-wrapper input::placeholder {
+        font-size: 14px;
+    }
+
+    .login-wrapper .logo-text {
+        font-size: 1.8rem;
+    }
+
+    .login-wrapper .social-login-buttons {
+        flex-direction: column;
+    }
+
+    .login-wrapper .social-login-buttons button {
+        width: 100%;
+    }
+
+    .login-wrapper {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .login-wrapper {
+        max-width: 80%;
+        margin: 4rem auto;
+        padding: 35px 35px;
+    }
+
+    .login-wrapper .logo-text {
+        font-size: 1.8rem;
+    }
+
+    .login-wrapper input {
+        font-size: 16px;
+    }
+
+    .login-wrapper input::placeholder {
+        font-size: 15px;
+    }
+
+    .login-wrapper .btn[type="submit"],
+    .login-wrapper .action-btn {
+        font-size: 15px;
+        padding: 10px 18px;
+    }
+
+    .login-wrapper .link-style {
+        font-size: 13px;
+    }
+}

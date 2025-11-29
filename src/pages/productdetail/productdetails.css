@@ -1,0 +1,375 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.product-card-deatils {
+    width: 100%;
+    margin: 50px auto;
+
+}
+
+.product-detail-loading {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.product-card-deatils .product-detail-effect {
+    display: flex;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 20px 40px;
+}
+
+.product-detail-effect .product-detail-image {
+    width: 100%;
+    text-align: center;
+}
+
+.product-detail-effect .product-detail-image img {
+    width: 200px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.product-detail-effect .product-detail-image img:hover {
+    transform: translateY(-10px);
+    transition: 0.7s;
+    -webkit-transition: 0.7;
+    -moz-transition: 0.7;
+    -ms-transition: 0.7;
+    -o-transition: 0.7;
+}
+
+.product-detail-effect .product-badge {
+    position: relative;
+    background: linear-gradient(45deg, #18181B, #27272A);
+    color: white;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: fit-content;
+    z-index: 1;
+}
+
+.product-detail-effect .badge-shine {
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -50%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.product-detail-effect .product-detail-info {
+    padding-left: 20px;
+}
+
+.product-detail-effect .product-detail-info .product-color {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.product-detail-effect .product-detail-info .color-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #ccc;
+}
+
+.product-detail-effect .product-detail-info .color-label {
+    font-weight: normal;
+}
+
+.product-detail-info>.product-brand,
+.product-detail-info>.product-model,
+.product-detail-info>.product-color,
+.product-detail-info>.product-category {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #374151;
+}
+
+.product-detail-effect .product-detail-info .product-price {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.product-detail-effect .product-detail-info .price-original {
+    text-decoration: line-through;
+    color: #9ca3af;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.product-detail-effect .product-detail-info .price-discounted {
+    color: #10b981;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.product-detail-effect .product-detail-info .discount {
+    color: #ef4444;
+    font-weight: 600;
+    font-size: 13px;
+    margin-left: 6px;
+}
+
+.product-detail-effect .product-detail-rating {
+    display: flex;
+    align-items: flex-end;
+    font-size: 14px;
+    font-weight: 500;
+    gap: 8px;
+}
+
+.product-detail-effect .product-detail-rating svg {
+    color: #facc15;
+    font-size: 18px;
+}
+
+.product-detail-effect .product-detail-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    padding: 10px 0;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.product-detail-effect .product-detail-stock {
+    font-size: 13px;
+    color: #16a34a;
+    /* green for in stock */
+    font-weight: 600;
+}
+
+.product-detail-effect .product-button {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    will-change: transform, box-shadow;
+}
+
+.product-detail-effect .product-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+    will-change: left;
+}
+
+.product-detail-effect .product-button:hover {
+    background: linear-gradient(45deg, #27272A, #3F3F46);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-detail-effect .product-button:hover::before {
+    left: 100%;
+}
+
+.product-detail-effect .button-icon {
+    transition: transform 0.3s ease;
+}
+
+.product-detail-effect .product-button:hover .button-icon {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+.product-detail-effect .product-detail-bottom .cart-counter {
+    display: flex;
+    justify-content: space-between;
+    background-color: #E9F1FF;
+    width: 150px;
+    border-radius: 8px;
+    height: fit-content;
+    align-items: center;
+}
+
+.product-detail-effect .product-detail-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-detail-effect .product-detail-bottom .cart-counter button {
+    background-color: #E9F1FF;
+    border: none;
+    font-size: 25px;
+    padding: 1px 20px 5px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.product-detail-effect .product-detail-bottom .cart-counter button:first-child:hover {
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    border-radius: 5px 0px 0px 5px;
+    transition: 0.7s;
+    color: #ffffff;
+}
+
+.product-detail-effect .product-detail-bottom .cart-counter button:last-child:hover {
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    border-radius: 0px 5px 5px 0px;
+    transition: 0.7s;
+    color: #ffffff;
+
+}
+
+.product-detail-effect .product-detail-bottom .cart-counter h3 {
+    margin: 0 5px;
+    font-size: 16px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .product-card-deatils {
+        margin: 30px auto;
+        padding: 0 20px;
+        max-width: 90%;
+    }
+
+    .product-card-deatils .product-detail-effect {
+        flex-direction: column;
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .product-detail-effect .product-detail-image {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .product-detail-effect .product-detail-image img {
+        width: 100%;
+        max-height: 250px;
+        object-fit: contain;
+    }
+
+    .product-detail-effect .product-detail-info {
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    .product-detail-effect .product-detail-meta {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 15px;
+    }
+
+    .product-detail-effect .product-detail-bottom {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .product-detail-effect .product-detail-bottom .cart-counter {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .product-detail-effect .product-button {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 16px;
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .product-card-deatils {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    .product-card-deatils .product-detail-effect {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .product-detail-effect .product-detail-image {
+        width: 100%;
+    }
+
+    .product-detail-effect .product-detail-image img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .product-detail-effect .product-detail-info {
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    .product-detail-effect .product-detail-meta {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .product-detail-effect .product-detail-bottom {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .product-detail-effect .product-detail-bottom .cart-counter {
+        width: 25%;
+        justify-content: space-between;
+    }
+
+    .product-detail-effect .product-detail-bottom .cart-counter button {
+        font-size: 20px;
+    }
+
+    .product-detail-effect .product-detail-bottom .cart-counter h3 {
+        font-size: 14px;
+    }
+
+    .product-detail-effect .product-button {
+        font-size: 13px;
+        padding: 12px;
+        width: 100%;
+        justify-content: center;
+    }
+}
